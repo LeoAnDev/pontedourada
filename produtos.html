@@ -1,0 +1,112 @@
+<!-- produtos.html - Cadastro de Produtos Centralizado -->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ponte Dourada | Produtos - GEC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/Logotipos/PonteDourada.png">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="js/admin.js"></script>
+</head>
+
+<body>
+    <div class="admin-container">
+        
+        <!-- Painel Centralizado (Mesmo do Dashboard) -->
+        <main class="main-content">
+            <header class="topbar">
+                <h1>CADASTRO DE PRODUTOS</h1>
+                <div class="topbar-actions">
+                    <!-- Botão Home Sugestivo -->
+                    <a href="dashboard.html" class="btn-nav">
+                        <i class="fas fa-th-large"></i> <span>Dashboard</span>
+                    </a>
+                </div>
+            </header>
+
+            <div class="content">
+                <!-- CARD DE FORMULÁRIO -->
+                <div class="card registration-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-plus-circle"></i> Novo Produto</h3>
+                    </div>
+                    <div class="card-body">
+                        <form onsubmit="return salvarProduto(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Nome do Produto</label>
+                                    <input type="text" class="form-control" id="nome" placeholder="Ex: Sonda Nasogástrica" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Tipo</label>
+                                    <select class="form-control" id="tipo" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="Material Médico">Material Médico</option>
+                                        <option value="Medicamento">Medicamento</option>
+                                        <option value="Equipamento">Equipamento</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Fornecedor</label>
+                                    <select class="form-control" id="fornecedorId" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="1">MedSupply Ltda</option>
+                                        <option value="2">HomeCare Materiais</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Estoque</label>
+                                    <input type="number" class="form-control" id="quantidade" placeholder="0" min="0">
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="reset" class="btn btn-secondary">Limpar Campos</button>
+                                <button type="submit" class="btn btn-primary">Salvar Produto</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- CARD DE LISTAGEM -->
+                <div class="card list-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-list"></i> Produtos Cadastrados</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nome</th>
+                                        <th>Tipo</th>
+                                        <th>Estoque</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Sonda Nasogástrica</td>
+                                        <td>Material Médico</td>
+                                        <td>150</td>
+                                        <td>
+                                            <button class="btn-icon edit" title="Editar"><i class="fas fa-edit"></i></button>
+                                            <button class="btn-icon delete" title="Excluir"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

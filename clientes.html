@@ -1,0 +1,133 @@
+<!-- clientes.html - Cadastro de Clientes -->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ponte Dourada | Clientes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/Logotipos/PonteDourada.png">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="https://unpkg.com/imask"></script>
+    <script src="js/admin.js"></script>
+</head>
+
+<body>
+    <div class="admin-container">
+     
+        <main class="main-content">
+            <header class="topbar">
+                <h1>CLIENTES - Cadastro</h1>
+                <div class="topbar-actions">
+                    <a href="dashboard.html" class="btn-nav">
+                        <i class="fas fa-th-large"></i> <span>Dashboard</span>
+                    </a>
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Novo Cliente</h3>
+                    </div>
+                    <div class="card-body">
+                        <form onsubmit="return salvarCliente(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Pessoa</label>
+                                    <select class="form-control" id="pessoaId" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="1">Maria Silva</option>
+                                        <option value="2">João Oliveira</option>
+                                        <option value="3">Ana Costa</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>CPF</label>
+                                    <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Data de Nascimento</label>
+                                    <input type="date" class="form-control" id="dataNascimento" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Responsável (se menor)</label>
+                                    <select class="form-control" id="responsavelId">
+                                        <option value="">Não possui</option>
+                                        <option value="1">Maria Silva</option>
+                                        <option value="2">João Oliveira</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="reset" class="btn btn-secondary">Limpar</button>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 20px;">
+                    <div class="card-header">
+                        <h3>Clientes Cadastrados</h3>
+                    </div>
+                    <div class="card-body">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>CPF</th>
+                                    <th>Data Nasc.</th>
+                                    <th>Responsável</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Maria Silva</td>
+                                    <td>123.456.789-00</td>
+                                    <td>15/03/1985</td>
+                                    <td>-</td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>João Oliveira</td>
+                                    <td>987.654.321-00</td>
+                                    <td>22/07/1990</td>
+                                    <td>-</td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Pedro Costa</td>
+                                    <td>456.789.123-00</td>
+                                    <td>10/05/2015</td>
+                                    <td>Ana Costa</td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

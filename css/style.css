@@ -1,0 +1,334 @@
+/* css/style.css - Guia de Estilos Ponte Dourada Oficial */
+
+/* Carregamento da Fonte Uber Move */
+@font-face {
+    font-family: 'Uber Move';
+    src: url('../fonts/UberMove-Medium.woff2') format('woff2'),
+        url('../fonts/UberMove-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Uber Move';
+    src: url('../fonts/UberMove-Bold.woff2') format('woff2'),
+        url('../fonts/UberMove-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* ===== BRAND COLORS ===== */
+:root {
+    /* Cores Principais */
+    --primary: #FA2408;
+    --primary-darker: #CB2B16;
+    --primary-lighter: #FB4E37;
+    --primary-subtle: #FDA69B;
+
+    /* Estados */
+    --error: #FF3B3B;
+    --warning: #FFCC00;
+    --info: #0063F7;
+    --success: #06C270;
+
+    /* Tons de Cinza */
+    --dark-1: #3A3A3C;
+    --dark-2: #6B7588;
+    --dark-3: #8F90A6;
+    --dark-4: #C7C9D9;
+    --light-1: #DDE5E9;
+    --light-2: #EBEBF0;
+    --light-3: #F2F2F5;
+    --light-4: #FAFAFC;
+
+    /* Backgrounds */
+    --bg-page: #f4f4f4;
+    --bg-card: #ffffff;
+
+    /* Tipografia */
+    -font-family: 'Uber Move', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-page);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--dark-1);
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    background-color: var(--bg-card);
+    width: 90%;
+    max-width: 480px;
+    padding: 40px 32px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-radius: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Faixa decorativa superior - cor primária */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-lighter) 100%);
+}
+
+/* ===== HEADER / LOGO ===== */
+.header {
+    margin-bottom: 8px;
+}
+
+.header img {
+    max-width: 220px;
+    height: auto;
+    margin-bottom: 8px;
+    transition: transform 0.3s;
+}
+
+.header img:hover {
+    transform: scale(1.02);
+}
+
+/* Subtítulo GEC */
+.header p {
+    color: var(--dark-3);
+    font-size: 0.85rem;
+    margin-top: 8px;
+}
+
+/* ===== MAIN ===== */
+.main {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+/* ===== LOGIN FORM ===== */
+.login-form {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.login-form h2 {
+    text-align: center;
+    color: var(--dark-1);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+}
+
+/* Linha decorativa abaixo do título */
+.login-form h2::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--primary);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+/* ===== INPUT GROUPS ===== */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-group label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--dark-2);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.input-group input {
+    padding: 14px 16px;
+    border: 2px solid var(--light-2);
+    border-radius: 10px;
+    font-size: 1rem;
+    color: var(--dark-1);
+    background: var(--light-4);
+    transition: all 0.25s;
+    outline: none;
+}
+
+.input-group input::placeholder {
+    color: var(--dark-4);
+}
+
+/* Foco - cor primária com glow */
+.input-group input:focus {
+    border-color: var(--primary);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(250, 36, 8, 0.08);
+}
+
+/* ===== BOTÃO LOGIN - PRIMARY ===== */
+.btn-login {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover - cor darker */
+.btn-login:hover {
+    background-color: var(--primary-darker);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(250, 36, 8, 0.3);
+}
+
+/* Active - cor lighter */
+.btn-login:active {
+    background-color: var(--primary-lighter);
+    transform: translateY(0);
+}
+
+/* Efeito ripple */
+.btn-login::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-login:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--light-2);
+}
+
+.footer a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.footer a:hover {
+    color: var(--primary-darker);
+    text-decoration: underline;
+}
+
+.footer a::before {
+    content: '←';
+    font-size: 1.1rem;
+}
+
+/* ===== ALERTAS SWEETALERT2 CUSTOMIZAÇÃO ===== */
+/* Estes estilos complementam o SweetAlert2 com as cores da marca */
+
+.swal2-popup {
+    border-radius: 16px !important;
+    font-family: var(--font-family) !important;
+}
+
+.swal2-title {
+    color: var(--dark-1) !important;
+    font-weight: 700 !important;
+}
+
+.swal2-html-container {
+    color: var(--dark-2) !important;
+}
+
+.swal2-confirm {
+    background-color: var(--primary) !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    padding: 10px 24px !important;
+}
+
+.swal2-confirm:hover {
+    background-color: var(--primary-darker) !important;
+}
+
+/* Ícones de status */
+.swal2-icon.swal2-success {
+    border-color: var(--success) !important;
+    color: var(--success) !important;
+}
+
+.swal2-icon.swal2-error {
+    border-color: var(--error) !important;
+    color: var(--error) !important;
+}
+
+.swal2-icon.swal2-warning {
+    border-color: var(--warning) !important;
+    color: var(--warning) !important;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+        background: #ffffff;
+    }
+
+    .container {
+        box-shadow: none;
+        padding: 24px 20px;
+        max-width: 100%;
+    }
+
+    .header img {
+        max-width: 180px;
+    }
+}

@@ -1,0 +1,402 @@
+/* css/admin.css - Estilização Centralizada Unificada */
+
+/* Carregamento da Fonte Uber Move */
+@font-face {
+    font-family: 'Uber Move';
+    src: url('../fonts/UberMove-Medium.woff2') format('woff2'),
+        url('../fonts/UberMove-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Uber Move';
+    src: url('../fonts/UberMove-Bold.woff2') format('woff2'),
+        url('../fonts/UberMove-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    --primary: #FA2408;
+    --primary-darker: #CB2B16;
+    --error: #FF3B3B;
+    --dark-1: #3A3A3C;
+    --dark-2: #6B7588;
+    --light-1: #DDE5E9;
+    --light-2: #EBEBF0;
+    --light-4: #FAFAFC;
+    --font-family: 'Uber Move', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: #f0f2f5;
+    min-height: 100vh;
+}
+
+/* CENTRALIZAÇÃO TOTAL */
+.admin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.main-content {
+    width: 100%;
+    max-width: 1000px;
+    /* Um pouco mais largo para tabelas */
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* TOPBAR */
+.topbar {
+    padding: 20px 25px;
+    border-bottom: 1px solid var(--light-2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar h1 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--dark-1);
+}
+
+/* BOTÕES DE NAVEGAÇÃO */
+.topbar-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.btn-nav,
+.btn-logoff,
+.btn-primary,
+.btn-secondary {
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-nav {
+    background: var(--light-1);
+    color: var(--dark-1);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #fff;
+}
+
+.btn-secondary {
+    background: var(--dark-2);
+    color: #fff;
+}
+
+.btn-logoff {
+    background: var(--error);
+    color: #fff;
+}
+
+/* CONTENT & CARDS */
+.content {
+    padding: 25px;
+}
+
+.card {
+    border: 1px solid var(--light-2);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    background: #fff;
+}
+
+.card-header {
+    padding: 15px 20px;
+    background: var(--light-4);
+    border-bottom: 1px solid var(--light-2);
+}
+
+.card-header h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--dark-2);
+}
+
+/* FORMULÁRIOS */
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--dark-2);
+}
+
+.form-control {
+    padding: 12px;
+    border: 2px solid var(--light-2);
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* TABELAS */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.data-table th,
+.data-table td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--light-2);
+    font-size: 0.85rem;
+}
+
+.data-table th {
+    background: var(--light-4);
+    font-weight: 800;
+    color: var(--dark-2);
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--dark-2);
+    padding: 5px;
+    font-size: 1rem;
+}
+
+.btn-icon:hover.edit {
+    color: var(--primary);
+}
+
+.btn-icon:hover.delete {
+    color: var(--error);
+}
+
+/* ESTILO DASHBOARD COMPATÍVEL - TEXTO DO SETOR */
+.welcome-banner {
+    color: var(--primary);
+    /* Usa o vermelho definido no seu :root */
+    font-weight: 800;
+    /* Aplica o negrito */
+    text-align: center;
+    /* Centraliza o texto */
+    padding: 15px;
+    margin-bottom: 25px;
+    background: transparent;
+    /* Remove o gradiente para o texto vermelho se destacar no fundo branco */
+}
+
+.sector-badge {
+    background: var(--primary);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 800;
+}
+
+/* =========================================
+   ADICIONADO: ESTILIZAÇÃO DO MENU GRID DASHBOARD
+   ========================================= */
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    padding: 20px;
+    background: var(--light-4);
+    border-radius: 12px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+    background: #fff;
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+}
+
+.icon-box {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.icon-box img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    display: block;
+    /* Transforma a imagem em branco: */
+    filter: brightness(0) invert(1);
+}
+
+.icon-box.produtos {
+    background: #CB2B16;
+}
+
+.icon-box.servicos {
+    background: #ffcc00;
+}
+
+.icon-box.agendamentos {
+    background: #0063f7;
+}
+
+.icon-box.fornecedores {
+    background: #06c270;
+}
+
+.icon-box.profissionais {
+    background: #6b7588;
+}
+
+.icon-box.clientes {
+    background: #fda69b;
+}
+
+.icon-box.dashboard {
+    background: #a09897;
+}
+
+.menu-item span {
+    font-weight: 700;
+    color: var(--dark-1);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.image-banner-tab {
+    width: 100%;
+    height: 110px;
+    margin-bottom: 25px;
+    display: flex;
+    /* Ativa flexbox para centralizar a logo */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    overflow: hidden;
+    /* Mantendo suas bordas e sombras conforme solicitado */
+    border: 1px solid var(--light-2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    background-color: #FA2408;
+}
+
+.image-banner-tab img {
+    max-width: 100%;
+    /* Impede que a imagem ultrapasse a largura do box */
+    max-height: 100%;
+    /* Impede que a imagem ultrapasse a altura do box */
+    width: auto;
+    /* Redimensiona horizontalmente de forma proporcional */
+    height: auto;
+    /* Redimensiona verticalmente de forma proporcional */
+    object-fit: contain;
+    /* Garante que a imagem inteira apareça no espaço sem cortes */
+    display: block;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    /* Alinha o conteúdo para a direita */
+    padding: 20px 30px;
+    border-top: 1px solid var(--light-2);
+    background: #fff;
+}
+
+footer .btn-logoff {
+    background-color: var(--error);
+    /* Cor vermelha definida no seu :root */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+footer .btn-logoff:hover {
+    background-color: var(--primary-darker);
+    transform: translateY(-2px);
+}
+
+h1 {
+    flex: 1;
+    /* Faz o título ocupar o espaço disponível para permitir o alinhamento */
+    text-align: center;
+    /* Centraliza o texto */
+    font-weight: 800;
+    /* Aplica o negrito (conforme o padrão que você está usando) */
+    text-transform: uppercase;
+    /* Opcional: mantém o padrão de caixa alta do seu projeto */
+}

@@ -1,0 +1,136 @@
+<!-- profissionais.html - Cadastro de Profissionais -->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ponte Dourada | Profissionais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/Logotipos/PonteDourada.png">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="https://unpkg.com/imask"></script>
+    <script src="js/admin.js"></script>
+</head>
+
+<body>
+    <div class="admin-container">
+       
+        <main class="main-content">
+            <header class="topbar">
+                <h1>PROFISSIONAIS - Cadastro</h1>
+                <div class="topbar-actions">
+                    <a href="dashboard.html" class="btn-nav">
+                        <i class="fas fa-th-large"></i> <span>Dashboard</span>
+                    </a>
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Novo Profissional</h3>
+                    </div>
+                    <div class="card-body">
+                        <form onsubmit="return salvarProfissional(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Pessoa</label>
+                                    <select class="form-control" id="pessoaId" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="4">Dr. Carlos Mendes</option>
+                                        <option value="5">Dra. Fernanda Lima</option>
+                                        <option value="6">Enf. Pedro Santos</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Tipo Profissional</label>
+                                    <select class="form-control" id="tipoProfissional" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="Médico">Médico</option>
+                                        <option value="Enfermeiro">Enfermeiro</option>
+                                        <option value="Fisioterapeuta">Fisioterapeuta</option>
+                                        <option value="Técnico de Enfermagem">Técnico de Enfermagem</option>
+                                        <option value="Cuidador">Cuidador</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>CPF</label>
+                                    <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Conselho/Registro</label>
+                                    <input type="text" class="form-control" id="conselho" placeholder="Ex: CRM 12345">
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="reset" class="btn btn-secondary">Limpar</button>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 20px;">
+                    <div class="card-header">
+                        <h3>Profissionais Cadastrados</h3>
+                    </div>
+                    <div class="card-body">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>Tipo</th>
+                                    <th>CPF</th>
+                                    <th>Conselho</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Dr. Carlos Mendes</td>
+                                    <td>Médico</td>
+                                    <td>111.222.333-44</td>
+                                    <td>CRM 45678/RJ</td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Dra. Fernanda Lima</td>
+                                    <td>Enfermeira</td>
+                                    <td>222.333.444-55</td>
+                                    <td>COREN 98765/RJ</td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Enf. Pedro Santos</td>
+                                    <td>Fisioterapeuta</td>
+                                    <td>333.444.555-66</td>
+                                    <td>CREFITO 12345/RJ</td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!-- fornecedores.html - Cadastro de Fornecedores -->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ponte Dourada | Fornecedores</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/Logotipos/PonteDourada.png">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="https://unpkg.com/imask"></script>
+    <script src="js/admin.js"></script>
+</head>
+
+<body>
+    <div class="admin-container">      
+
+        <main class="main-content">
+            <header class="topbar">
+                <h1>FORNECEDORES - Cadastro</h1>
+                <div class="topbar-actions">
+                    <a href="dashboard.html" class="btn-nav">
+                        <i class="fas fa-th-large"></i> <span>Dashboard</span>
+                    </a>
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Novo Fornecedor</h3>
+                    </div>
+                    <div class="card-body">
+                        <form onsubmit="return salvarFornecedor(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Pessoa/Contato</label>
+                                    <select class="form-control" id="pessoaId" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="5">MedSupply Ltda</option>
+                                        <option value="6">HomeCare Materiais</option>
+                                        <option value="7">Saúde Total Distribuidora</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Razão Social</label>
+                                    <input type="text" class="form-control" id="razaoSocial"
+                                        placeholder="Nome da empresa" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>CNPJ</label>
+                                    <input type="text" class="form-control" id="cnpj" placeholder="00.000.000/0000-00"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Telefone Comercial</label>
+                                    <input type="tel" class="form-control" id="telefone" placeholder="(00) 0000-0000">
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="reset" class="btn btn-secondary">Limpar</button>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 20px;">
+                    <div class="card-header">
+                        <h3>Fornecedores Cadastrados</h3>
+                    </div>
+                    <div class="card-body">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Razão Social</th>
+                                    <th>CNPJ</th>
+                                    <th>Contato</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>MedSupply Ltda</td>
+                                    <td>12.345.678/0001-90</td>
+                                    <td>(21) 3456-7890</td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>HomeCare Materiais</td>
+                                    <td>98.765.432/0001-10</td>
+                                    <td>(21) 2345-6789</td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Saúde Total Distribuidora</td>
+                                    <td>45.678.901/0001-23</td>
+                                    <td>(21) 4567-8901</td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!-- servicos.html - Cadastro de Serviços -->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ponte Dourada | Serviços</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/Logotipos/PonteDourada.png">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="js/admin.js"></script>
+</head>
+
+<body>
+    <div class="admin-container">
+
+        <main class="main-content">
+            <header class="topbar">
+                <h1>SERVIÇOS - Cadastro</h1>
+                <div class="topbar-actions">
+                    <a href="dashboard.html" class="btn-nav">
+                        <i class="fas fa-th-large"></i> <span>Dashboard</span>
+                    </a>
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Novo Serviço</h3>
+                    </div>
+                    <div class="card-body">
+                        <form onsubmit="return salvarServico(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Nome do Serviço</label>
+                                    <input type="text" class="form-control" id="nome"
+                                        placeholder="Ex: Fisioterapia Domiciliar" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Preço Base (R$)</label>
+                                    <input type="number" step="0.01" class="form-control" id="precoBase"
+                                        placeholder="0,00" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group" style="flex: 1;">
+                                    <label>Descrição</label>
+                                    <textarea class="form-control" id="descricao" rows="3"
+                                        placeholder="Descreva o serviço..."></textarea>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="reset" class="btn btn-secondary">Limpar</button>
+                                <button type="submit" class="btn btn-primary">Salvar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 20px;">
+                    <div class="card-header">
+                        <h3>Serviços Cadastrados</h3>
+                    </div>
+                    <div class="card-body">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>Descrição</th>
+                                    <th>Preço Base</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Fisioterapia Domiciliar</td>
+                                    <td>Sessões de fisioterapia no domicílio do paciente</td>
+                                    <td>R$ 150,00</td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Enfermagem Home Care</td>
+                                    <td>Cuidados de enfermagem 24h ou parcial</td>
+                                    <td>R$ 280,00</td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Acompanhamento Médico</td>
+                                    <td>Visitas médicas periódicas</td>
+                                    <td>R$ 350,00</td>
+                                    <td>
+                                        <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
