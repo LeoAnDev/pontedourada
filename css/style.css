@@ -46,7 +46,7 @@
     --bg-card: #ffffff;
 
     /* Tipografia */
-    -font-family: 'Uber Move', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    --font-family: 'Uber Move', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
 }
 
 * {
