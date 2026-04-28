@@ -1,9 +1,17 @@
-# pontedourada
+👤 Acesso ao Sistema
 
-Projeto Firjan
+🔴 Perfil  (Administrador / GESTOR)
+| Campo          | Valor                           |
+| -------------- | ------------------------------- |
+| *E-mail*     | gestor@gestor.com               |
+| *E-mail*     | atendimento@atendimento.com  |             |
+| *Senha*      | 123456                         |
+| *Permissões* | Acesso total a todos os módulos |
 
-Usuário: <gestor@gestor.com>
-Senha: 123456
 
-Usuário: <atendimento@atendimento.com>
-Senha: 123456
+🔵 Perfil ATENDIMENTO (Operacional)
+| Campo          | Valor                             |
+| -------------- | --------------------------------- |
+| *E-mail*     | operacional@email.com           |
+| *Senha*      | opec2026                        |
+| *Permissões* | Serviços, Agendamentos e Clientes |
